@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import { HTTP } from "../@/constants";
+import { HTTP } from "@/constants";
 import { useRouter } from "next/navigation";
 
 function EditService() {

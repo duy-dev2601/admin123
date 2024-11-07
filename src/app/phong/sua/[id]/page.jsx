@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { HTTP } from "../@/constants";
+import { HTTP } from "@/constants";
 import { useRouter } from "next/navigation";
 
 function EditRoom() {
@@ -60,7 +60,8 @@ function EditRoom() {
     e.preventDefault();
     setLoading(true);
     try {
-      const { tenPhong, tang, loaiPhong, moTa, imageLinks, trangThai } = roomData;
+      const { tenPhong, tang, loaiPhong, moTa, imageLinks, trangThai } =
+        roomData;
       if (!tenPhong || !tang || !loaiPhong || !imageLinks) {
         alert("Vui lòng nhập đầy đủ thông tin.");
         return;
@@ -95,14 +96,29 @@ function EditRoom() {
   };
 
   return (
-    <div className="container" style={{ padding: '40px 20px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
-      <h1 className="text-center mb-4" style={{ color: '#152c5b', fontWeight: 'bold', fontSize: '2rem' }}>
+    <div
+      className="container"
+      style={{
+        padding: "40px 20px",
+        backgroundColor: "#f8f9fa",
+        borderRadius: "8px",
+      }}
+    >
+      <h1
+        className="text-center mb-4"
+        style={{ color: "#152c5b", fontWeight: "bold", fontSize: "2rem" }}
+      >
         Chỉnh sửa Phòng
       </h1>
 
       <form onSubmit={handleUpdateRoom}>
         <div className="mb-3">
-          <label className="form-label" style={{ color: '#152c5b', fontWeight: 'bold' }}>Tên phòng:</label>
+          <label
+            className="form-label"
+            style={{ color: "#152c5b", fontWeight: "bold" }}
+          >
+            Tên phòng:
+          </label>
           <input
             type="text"
             name="tenPhong"
@@ -114,7 +130,12 @@ function EditRoom() {
         </div>
 
         <div className="mb-3">
-          <label className="form-label" style={{ color: '#152c5b', fontWeight: 'bold' }}>Tầng:</label>
+          <label
+            className="form-label"
+            style={{ color: "#152c5b", fontWeight: "bold" }}
+          >
+            Tầng:
+          </label>
           <input
             type="text"
             name="tang"
@@ -126,7 +147,12 @@ function EditRoom() {
         </div>
 
         <div className="mb-3">
-          <label className="form-label" style={{ color: '#152c5b', fontWeight: 'bold' }}>Loại phòng:</label>
+          <label
+            className="form-label"
+            style={{ color: "#152c5b", fontWeight: "bold" }}
+          >
+            Loại phòng:
+          </label>
           <select
             name="loaiPhong"
             value={roomData.loaiPhong}
@@ -136,13 +162,20 @@ function EditRoom() {
           >
             <option value="">Chọn loại phòng</option>
             {roomTypes.map((type) => (
-              <option key={type._id} value={type._id}>{type.tenLoai}</option>
+              <option key={type._id} value={type._id}>
+                {type.tenLoai}
+              </option>
             ))}
           </select>
         </div>
 
         <div className="mb-3">
-          <label className="form-label" style={{ color: '#152c5b', fontWeight: 'bold' }}>Mô tả phòng:</label>
+          <label
+            className="form-label"
+            style={{ color: "#152c5b", fontWeight: "bold" }}
+          >
+            Mô tả phòng:
+          </label>
           <textarea
             name="moTa"
             value={roomData.moTa}
@@ -154,7 +187,12 @@ function EditRoom() {
         </div>
 
         <div className="mb-3">
-          <label className="form-label" style={{ color: '#152c5b', fontWeight: 'bold' }}>Hình ảnh:</label>
+          <label
+            className="form-label"
+            style={{ color: "#152c5b", fontWeight: "bold" }}
+          >
+            Hình ảnh:
+          </label>
           <input
             type="text"
             name="imageLinks"
@@ -169,7 +207,11 @@ function EditRoom() {
           <button
             type="submit"
             className="btn"
-            style={{ backgroundColor: '#152c5b', color: 'white', fontWeight: 'bold' }}
+            style={{
+              backgroundColor: "#152c5b",
+              color: "white",
+              fontWeight: "bold",
+            }}
             disabled={loading}
           >
             {loading ? "Đang cập nhật..." : "Lưu thay đổi"}

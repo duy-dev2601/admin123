@@ -2,8 +2,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import axios from "axios";
-import { HTTP } from "../@/constants";
 import { useRouter } from "next/navigation";
+import { HTTP } from "@/constants";
 
 const EditRoom = () => {
   const [id, setId] = useState(null);
@@ -44,7 +44,7 @@ const EditRoom = () => {
           giaTien,
         });
         alert("Cập nhật thành công");
-        router.push('/danhmuc'); // Điều hướng về trang danh mục sau khi cập nhật
+        router.push("/danhmuc"); // Điều hướng về trang danh mục sau khi cập nhật
       } catch (error) {
         console.log(error);
         alert("Cập nhật thất bại");
@@ -90,15 +90,28 @@ const EditRoom = () => {
           }
         }
       `}</style>
-      <h2 style={{ color: "#152c5b", fontWeight: 'bold', marginBottom: '10px', textAlign: 'center' }}>
+      <h2
+        style={{
+          color: "#152c5b",
+          fontWeight: "bold",
+          marginBottom: "10px",
+          textAlign: "center",
+        }}
+      >
         Sửa Danh Mục Phòng
       </h2>
-      <Link href="/danhmuc" className="btn mt-3" style={{ backgroundColor: '#152c5b', color: 'white' }}>
+      <Link
+        href="/danhmuc"
+        className="btn mt-3"
+        style={{ backgroundColor: "#152c5b", color: "white" }}
+      >
         Quay lại
       </Link>
       <form onSubmit={handleUpdate} className="mt-4">
         <div className="mb-3">
-          <label htmlFor="tenLoai" className="form-label">Loại phòng</label>
+          <label htmlFor="tenLoai" className="form-label">
+            Loại phòng
+          </label>
           <input
             type="text"
             className="form-control"
@@ -110,7 +123,9 @@ const EditRoom = () => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="soLuong" className="form-label">Số lượng</label>
+          <label htmlFor="soLuong" className="form-label">
+            Số lượng
+          </label>
           <input
             type="number"
             className="form-control"
@@ -122,7 +137,9 @@ const EditRoom = () => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="tienNghi" className="form-label">Tiện nghi</label>
+          <label htmlFor="tienNghi" className="form-label">
+            Tiện nghi
+          </label>
           <input
             type="text"
             className="form-control"
@@ -134,7 +151,9 @@ const EditRoom = () => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="giaTien" className="form-label">Giá tiền</label>
+          <label htmlFor="giaTien" className="form-label">
+            Giá tiền
+          </label>
           <input
             type="number"
             className="form-control"
@@ -146,8 +165,12 @@ const EditRoom = () => {
           />
         </div>
         <div className="d-flex flex-column flex-sm-row">
-          <button type="submit" className="btn btn-custom">Lưu</button>
-          <Link href="/danhmuc" className="btn btn-secondary mx-2">Hủy</Link>
+          <button type="submit" className="btn btn-custom">
+            Lưu
+          </button>
+          <Link href="/danhmuc" className="btn btn-secondary mx-2">
+            Hủy
+          </Link>
         </div>
       </form>
     </div>
