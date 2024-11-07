@@ -5,7 +5,7 @@ import style from "./style.css";
 
 const Page = () => {
   const { data, loading, refetch } = useFetch("user");
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div>Loading......</div>;
   if (!data) return <div>No data available</div>;
 
   return (
