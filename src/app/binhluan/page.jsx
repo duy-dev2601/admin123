@@ -6,7 +6,7 @@ const CommentManager = () => {
   const [comments, setComments] = useState([
     {
       id: 1,
-      name: "John Doe",
+      name: "John Doe 1",
       comment: "Đây là một bài viết tuyệt vời!",
       rating: 5,
       image:
@@ -29,11 +29,14 @@ const CommentManager = () => {
   return (
     <div className="container mt-5">
       {/* Title */}
-      <h2 className="mb-4 text-center" style={{ color: "#152c5b", fontWeight: 'bold' }}>
+      <h2
+        className="mb-4 text-center"
+        style={{ color: "#152c5b", fontWeight: "bold" }}
+      >
         Quản lý bình luận
       </h2>
       {/* Comments List */}
-      <h4 className="mb-3" style={{ color: "#152c5b", fontWeight: 'bold' }}>
+      <h4 className="mb-3" style={{ color: "#152c5b", fontWeight: "bold" }}>
         Tất cả bình luận
       </h4>
       {/* Header Row */}
@@ -51,10 +54,14 @@ const CommentManager = () => {
             <li className="list-group-item" key={comment.id}>
               <div className="row align-items-center justify-content-between flex-wrap">
                 {/* Name */}
-                <strong className="col-12 col-md-2 text-center">{comment.name}</strong>
+                <strong className="col-12 col-md-2 text-center">
+                  {comment.name}
+                </strong>
 
                 {/* Comment Text */}
-                <p className="col-12 col-md-4 mb-0 text-center">{comment.comment}</p>
+                <p className="col-12 col-md-4 mb-0 text-center">
+                  {comment.comment}
+                </p>
 
                 {/* Image */}
                 {comment.image && (
@@ -73,7 +80,9 @@ const CommentManager = () => {
                 )}
 
                 {/* Rating */}
-                <p className="col-12 col-md-2 mb-0 text-center">{comment.rating} ★</p>
+                <p className="col-12 col-md-2 mb-0 text-center">
+                  {comment.rating} ★
+                </p>
 
                 {/* Delete Button */}
                 <div className="col-12 col-md-2 text-center mt-2 mt-md-0">
