@@ -22,8 +22,16 @@ function DanhMuc() {
         }
       `}</style>
       <div className="mb-4">
-        <h2 style={{ color: "#152c5b", fontWeight: 'bold', textAlign: 'center' }}>Quản lý Phòng</h2>
-        <Link href="/danhmuc/them" className="btn mt-3" style={{ backgroundColor: '#152c5b', color: 'white' }}>
+        <h2
+          style={{ color: "#152c5b", fontWeight: "bold", textAlign: "center" }}
+        >
+          Quản lý Phòng
+        </h2>
+        <Link
+          href="/danhmuc/them"
+          className="btn mt-3"
+          style={{ backgroundColor: "#152c5b", color: "white" }}
+        >
           + Thêm loại phòng
         </Link>
       </div>
@@ -43,19 +51,19 @@ function DanhMuc() {
             {data.map((room, index) => (
               <tr key={room._id} className="align-middle">
                 <td>{index + 1}</td>
-                <td>{room.tenLoai}</td> 
-                <td>{room.soLuong}</td> 
+                <td>{room.tenLoai}</td>
+                <td>{room.soLuong}</td>
                 <td>{room.tienNghi}</td>
                 <td>{room.giaTien}</td>
                 <td>
-                <Link
-                  href={`/danhmuc/sua/${room._id}`}
-                  className="btn mx-1"
-                  style={{ backgroundColor: "#152c5b", color: "white" }}
-                >
-                  Sửa
-                </Link>
-                <DeleteCategory _id={room._id} refetch={refetch} />
+                  <Link
+                    href={`/danhmuc/sua/${room._id}`}
+                    className="btn mx-1"
+                    style={{ backgroundColor: "#152c5b", color: "white" }}
+                  >
+                    Sửa
+                  </Link>
+                  <DeleteCategory _id={room._id} refetch={refetch} />
                 </td>
               </tr>
             ))}

@@ -1,20 +1,10 @@
 "use client";
-// import { useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+
+import AdminLayout from "./(AdminLayout)/layout";
 
 export default function Home() {
-  // const navigate = useRouter();
-
-  // const checkLogin = localStorage.getItem("statusLogin");
-
-  // useEffect(() => {
-  //   if (!checkLogin) {
-  //     navigate.push("/login");
-  //   }
-  // });
-
   return (
-    <>
+    <AdminLayout>
       <div className="status-board">
         <div className="status-item">
           <h2>Phòng đến trong ngày</h2>
@@ -239,6 +229,6 @@ export default function Home() {
           }
         }
       `}</style>
-    </>
+    </AdminLayout>
   );
 }

@@ -3,10 +3,9 @@ import React, { memo, useState } from "react";
 import Link from "next/link";
 import useFetch from "@/hook/useFetch";
 import DeleteProduct from "./xoa";
-import { mutate } from "swr";
 
 const Phong = () => {
-  const { data, loading, refetch } = useFetch("phong?populate=id_loaiphong");
+  const { data, refetch } = useFetch("phong?populate=id_loaiphong");
 
   return (
     <div className="container mt-4">
