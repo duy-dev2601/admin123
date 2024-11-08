@@ -3,16 +3,25 @@
 import Header from "@/components/layouts/Header";
 import SideBar from "@/components/layouts/Sidebar";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const StaffLayout = ({ children }) => {
   const navigate = useRouter();
-  const checkLogin = sessionStorage.getItem("role");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   useEffect(() => {
+    const checkLogin = sessionStorage.getItem("role");
+
     if (!checkLogin) {
-      navigate.push("/");
+      navigate.push("/login");
+    } else {
+      setIsAuthenticated(true); // Đảm bảo layout chỉ hiển thị khi người dùng đã đăng nhập
     }
-  });
+  }, [navigate]);
+
+  if (!isAuthenticated) {
+    return null; // Hoặc có thể hiển thị một màn hình loading nếu cần
+  }
   return (
     <>
       <SideBar />

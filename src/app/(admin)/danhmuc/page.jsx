@@ -5,6 +5,7 @@ import { memo } from "react";
 import DeleteCategory from "./xoa";
 import useFetch from "@/hook/useFetch";
 
+export const dynamic = "force-dynamic";
 function DanhMuc() {
   const { data, loading, refetch } = useFetch("loaiphong");
 

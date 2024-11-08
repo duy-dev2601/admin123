@@ -3,12 +3,18 @@ import React, { memo, useState } from "react";
 import Link from "next/link";
 import useFetch from "@/hook/useFetch";
 import DeleteProduct from "./xoa";
+import dynamic from "next/dynamic";
+
+const DynamicComponentWithNoSSR = dynamic({
+  ssr: false,
+});
 
 const Phong = () => {
   const { data, refetch } = useFetch("phong?populate=id_loaiphong");
 
   return (
     <div className="container mt-4">
+         <DynamicComponentWithNoSSR />
       <style jsx>{`
         .image-container {
           width: 100%;

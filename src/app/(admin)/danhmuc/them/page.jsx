@@ -6,12 +6,18 @@ import axios from "axios";
 import { HTTP } from "@/constants";
 import { useRouter } from "next/navigation";
 
+import dynamic from "next/dynamic";
+
+const DynamicComponentWithNoSSR = dynamic({
+  ssr: false,
+});
+
 function ThemLoaiPhong() {
   const [loading, setLoading] = useState(false);
   const [roomType, setRoomType] = useState("");
-  const [soLuong, setSoLuong] = useState(10); 
+  const [soLuong, setSoLuong] = useState(10);
   const [tienNghi, setTienNghi] = useState("");
-  const [giaTien, setGiaTien] = useState(500000); 
+  const [giaTien, setGiaTien] = useState(500000);
   const router = useRouter();
 
   const handleAddCategory = async (e) => {
@@ -30,7 +36,7 @@ function ThemLoaiPhong() {
       });
 
       alert("Thêm thành công");
-      router.push('/danhmuc');
+      router.push("/danhmuc");
     } catch (error) {
       console.log(error);
       alert("Thêm thất bại");
@@ -41,17 +47,30 @@ function ThemLoaiPhong() {
 
   return (
     <div className="container mt-4">
+      <DynamicComponentWithNoSSR />
       <div className="text-center mb-4">
-        <h2 style={{ color: "#152c5b", fontWeight: 'bold', marginBottom: '10px' }}>
+        <h2
+          style={{ color: "#152c5b", fontWeight: "bold", marginBottom: "10px" }}
+        >
           Thêm Danh Mục Phòng
         </h2>
-        <Link href="/danhmuc" className="btn mt-3" style={{ backgroundColor: '#152c5b', color: 'white' }}>
+        <Link
+          href="/danhmuc"
+          className="btn mt-3"
+          style={{ backgroundColor: "#152c5b", color: "white" }}
+        >
           Quay lại
         </Link>
       </div>
       <form onSubmit={handleAddCategory} className="card p-4 shadow-lg">
         <div className="mb-4">
-          <label htmlFor="roomType" className="form-label" style={{ color: "#152c5b", fontWeight: 'bold' }}>Loại Phòng</label>
+          <label
+            htmlFor="roomType"
+            className="form-label"
+            style={{ color: "#152c5b", fontWeight: "bold" }}
+          >
+            Loại Phòng
+          </label>
           <input
             type="text"
             className="form-control"
@@ -63,7 +82,13 @@ function ThemLoaiPhong() {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="soLuong" className="form-label" style={{ color: "#152c5b", fontWeight: 'bold' }}>Số Lượng</label>
+          <label
+            htmlFor="soLuong"
+            className="form-label"
+            style={{ color: "#152c5b", fontWeight: "bold" }}
+          >
+            Số Lượng
+          </label>
           <input
             type="number"
             className="form-control"
@@ -75,7 +100,13 @@ function ThemLoaiPhong() {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="tienNghi" className="form-label" style={{ color: "#152c5b", fontWeight: 'bold' }}>Tiện Nghi</label>
+          <label
+            htmlFor="tienNghi"
+            className="form-label"
+            style={{ color: "#152c5b", fontWeight: "bold" }}
+          >
+            Tiện Nghi
+          </label>
           <input
             type="text"
             className="form-control"
@@ -87,7 +118,13 @@ function ThemLoaiPhong() {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="giaTien" className="form-label" style={{ color: "#152c5b", fontWeight: 'bold' }}>Giá Tiền</label>
+          <label
+            htmlFor="giaTien"
+            className="form-label"
+            style={{ color: "#152c5b", fontWeight: "bold" }}
+          >
+            Giá Tiền
+          </label>
           <input
             type="number"
             className="form-control"
@@ -98,13 +135,17 @@ function ThemLoaiPhong() {
             placeholder="Nhập giá tiền..."
           />
         </div>
-        <button 
-          type="submit" 
-          className="btn w-100" 
-          style={{ backgroundColor: '#152c5b', color: 'white', fontWeight: 'bold' }}
+        <button
+          type="submit"
+          className="btn w-100"
+          style={{
+            backgroundColor: "#152c5b",
+            color: "white",
+            fontWeight: "bold",
+          }}
           disabled={loading}
         >
-          {loading ? 'Đang thêm...' : 'Thêm phòng'}
+          {loading ? "Đang thêm..." : "Thêm phòng"}
         </button>
       </form>
 

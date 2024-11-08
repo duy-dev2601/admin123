@@ -5,6 +5,12 @@ import useFetch from "@/hook/useFetch";
 import Deleteservice from "./xoa";
 import { mutate } from "swr";
 
+import dynamic from "next/dynamic";
+
+const DynamicComponentWithNoSSR = dynamic({
+  ssr: false,
+});
+
 const TinTuc = () => {
   const { data } = useFetch("tintuc");
 
@@ -34,10 +40,18 @@ const TinTuc = () => {
         }
       `}</style>
       <div className="mb-4">
-        <h2 className="text-center" style={{ color: "#152c5b", fontWeight: 'bold' }}>
+        <DynamicComponentWithNoSSR />
+        <h2
+          className="text-center"
+          style={{ color: "#152c5b", fontWeight: "bold" }}
+        >
           Quản lý Tin Tức
         </h2>
-        <Link href="/tintuc/them" className="btn mt-3" style={{ backgroundColor: '#152c5b', color: 'white' }}>
+        <Link
+          href="/tintuc/them"
+          className="btn mt-3"
+          style={{ backgroundColor: "#152c5b", color: "white" }}
+        >
           + Thêm tin tức
         </Link>
       </div>
@@ -59,9 +73,7 @@ const TinTuc = () => {
                   <td>{index + 1}</td>
                   <td>{tinTuc.TenTinTuc}</td>
                   <td>
-                    <div className="content">
-                      {tinTuc.NoiDung}
-                    </div>
+                    <div className="content">{tinTuc.NoiDung}</div>
                   </td>
                   <td>
                     <div className="image-container">
@@ -99,4 +111,3 @@ const TinTuc = () => {
 };
 
 export default memo(TinTuc);
-

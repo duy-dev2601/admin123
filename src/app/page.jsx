@@ -1,6 +1,6 @@
 "use client";
 
-import AdminLayout from "./(AdminLayout)/layout";
+import AdminLayout from "./(admin)/layout";
 
 export default function Home() {
   return (
