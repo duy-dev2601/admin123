@@ -5,8 +5,8 @@ import Link from "next/link"; // Đảm bảo bạn đã nhập khẩu Link đú
 import DeleteNhanVien from "./xoa/index";
 import style from "./style.css";
 
-const Nhanvien = () => {
-  const { data, loading, refetch } = useFetch("nhanvien"); // Điều chỉnh URL để lấy dữ liệu nhân viên
+const Admin = () => {
+  const { data, loading, refetch } = useFetch("admin"); // Điều chỉnh URL để lấy dữ liệu nhân viên
   if (loading) return <div>Đang tải...</div>;
   if (!data) return <div>Không có dữ liệu</div>;
 
@@ -69,4 +69,4 @@ const Nhanvien = () => {
   );
 };
 
-export default Nhanvien;
+export default Admin;

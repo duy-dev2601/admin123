@@ -8,7 +8,6 @@ import useFetch from "@/hook/useFetch";
 export const dynamic = "force-dynamic";
 function DanhMuc() {
   const { data, loading, refetch } = useFetch("loaiphong");
-
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -17,9 +16,9 @@ function DanhMuc() {
     <div className="container mt-4">
       <style jsx>{`
         .custom-image {
-          max-width: 200px; /* Set your desired width */
-          height: auto; /* Maintain aspect ratio */
-          border-radius: 10px; /* Keep your existing border radius */
+          max-width: 200px; 
+          height: auto; 
+          border-radius: 10px;
         }
       `}</style>
       <div className="mb-4">

@@ -12,7 +12,7 @@ const DynamicComponentWithNoSSR = dynamic({
 });
 
 const TinTuc = () => {
-  const { data } = useFetch("tintuc");
+  const { data, refetch } = useFetch("tintuc");
 
   return (
     <div className="container mt-4">
@@ -92,7 +92,7 @@ const TinTuc = () => {
                     >
                       Sửa
                     </Link>
-                    <Deleteservice _id={tinTuc._id} refetch={mutate} />
+                    <Deleteservice _id={tinTuc._id} refetch={refetch} />
                   </td>
                 </tr>
               ))

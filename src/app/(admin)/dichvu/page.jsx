@@ -18,7 +18,7 @@ const DichVu = () => {
           border-radius: 10px;
         }
         .custom-image {
-          width: 100%;
+          width: 600px;
           height: 100%;
           object-fit: cover;
           border-radius: 10px;

@@ -8,7 +8,7 @@ const DeleteNhanVien = ({ _id, refetch }) => {
   const handleDeleteNhanVien = async () => {
     setLoading(true);
     try {
-      await axios.delete(`${HTTP}nhanvien/${_id}`);
+      await axios.delete(`${HTTP}admin/${_id}`);
 
       alert("Xoa thanh cong");
 

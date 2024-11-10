@@ -20,7 +20,7 @@ const EditEmployee = () => {
   // Hàm để lấy dữ liệu nhân viên từ API
   const handleShowDataEmployee = async (_id) => {
     try {
-      const res = await axios.get(`${HTTP}nhanvien/${_id}`);
+      const res = await axios.get(`${HTTP}admin/${_id}`);
       setData(res?.data);
       setTenNhanVien(res?.data?.TenNhanVien);
       setChucVu(res?.data?.ChucVu);

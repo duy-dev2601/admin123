@@ -79,6 +79,10 @@ const SideBar = () => {
             <i className="bi bi-chat-left-text-fill"></i>
             <Link href="/tintuc">Quản lý tin tuc</Link>
           </p>
+          <p>
+            <i className="bi bi-cart-fill"></i>
+            <Link href="/dichvu">Quản lý dịch vụ</Link>
+          </p>
         </>
       )}
       <hr />

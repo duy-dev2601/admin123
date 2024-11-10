@@ -15,12 +15,12 @@ const StaffLayout = ({ children }) => {
     if (!checkLogin) {
       navigate.push("/login");
     } else {
-      setIsAuthenticated(true); // Đảm bảo layout chỉ hiển thị khi người dùng đã đăng nhập
+      setIsAuthenticated(true);
     }
   }, [navigate]);
 
   if (!isAuthenticated) {
-    return null; // Hoặc có thể hiển thị một màn hình loading nếu cần
+    return null;
   }
   return (
     <>
